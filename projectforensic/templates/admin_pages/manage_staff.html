@@ -1,0 +1,64 @@
+{% include "admin_page/admin_header.html" %}
+
+
+
+<form  method="post">
+    <table>
+        <tr>
+            <th>name</th>
+            <td><input type="text" name = "name"></td>
+        </tr>
+        <tr>
+            <th>position</th>
+            <td><input type="text" name = "position"></td>
+        </tr>
+        <tr>
+            <th>gender</th>
+            <td><input type="radio" name = "ender" value="male">male
+            <input type="radio" name = "gender" value="female">female</td>
+        </tr>
+        <tr>
+            <th>email</th>
+            <td><input type="email" name = "email_id"></td>
+        </tr>
+        <tr>
+            <th>place</th>
+            <td><input type="text" name = "place"></td>
+        </tr>
+        <tr>
+            <th>district</th>
+            <td><input type="text" name = "place"></td>
+        </tr>
+        <tr>
+            <th>state</th>
+            <td><input type="text" name = "state"></td>
+        </tr>
+        <tr>
+            <th>contactNO</th>
+            <td><input type="tel" name = "contact_no"></td>
+        </tr>
+        <tr>
+            <th>upload photo</th>
+            <td><input type="file" name = "photo"></td>
+        </tr>
+        
+        <tr>
+            <th>username</th>
+            <td><input type="text" name = "username"></td>
+        </tr>
+        <tr>
+            <th>password</th>
+            <td><input type="password" name = "password"></td>
+        </tr>
+
+        <tr>
+        <th>
+            
+        </th>
+        <td>
+            <input type="submit" name="submit">
+        </td></tr>
+    </table>
+</form>
+
+{% include "footer.html" %}
