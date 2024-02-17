@@ -15,7 +15,12 @@ def manageStaff():
         gender=request.form['gender']
         email=request.form['email_id']
         place=request.form['place']
-
+        district=request.form['district']
+        state=request.form['state']
+        contactNo=request.form['contact_no']
+        photo=request.form['photo']
+        username=request.form['username']
+        password=request.form['password']
 
 
 
