@@ -1,3 +1,4 @@
+import uuid
 from flask import *
 from database import *
 
@@ -7,8 +8,11 @@ admin = Blueprint('admin',__name__)
 def adminHome():
     return render_template('admin_pages/admin_home.html')
 
-@admin.route('/manage_staff')
+@admin.route('/manage_staff',methods=['get','post'])
 def manageStaff():
+    data={}
+    q1 = "select * from staff"
+    data['staff']=select(q1)
     if 'submit' in request.form:
         name=request.form['name']
         position=request.form['position']
@@ -18,11 +22,24 @@ def manageStaff():
         district=request.form['district']
         state=request.form['state']
         contactNo=request.form['contact_no']
-        photo=request.form['photo']
-        username=request.form['username']
+        photo=request.files['photo']
+        path='static/staff'+str(uuid.uuid4())+photo.filename
+        photo.save(path)
+
+
+
+        username=request.form['username']  
         password=request.form['password']
+        q1="insert into login values(null,'%s','%s','staff')"%(username,password)
+        res = insert(q1)
+        q2="insert into staff values(null,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(name,position,gender,email,place,district,state,contactNo,path,res)
+        insert(q2)
+        return redirect(url_for('admin.manageStaff'))
+    
+    return render_template('admin_pages/manage_staff.html',data=data)
+    
+
+ 
 
 
 
-
-    return render_template('/admin_pages/manage_staff.html')
