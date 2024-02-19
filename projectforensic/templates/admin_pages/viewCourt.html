@@ -1,0 +1,21 @@
+{% include "admin_pages/admin_header.html" %}
+<table>
+    <tr>
+        <th>name</th>
+        <th>place</th>
+        <th>email</th>
+        <th>contactNO</th>
+        <th>court type</th>
+        
+    </tr> 
+{% for i in data['staff']%}
+    <tr>
+        <td>{{i['name']}}</td>
+        <td>{{i['place']}}</td>d
+        <td>{{i['email_id']}}</td>
+        <td>{{i['contact_no']}}</td>
+        <td>{{i['court_type']}}</td>
+    </tr>   
+    {%endfor%}
+</table>
+{% include "footer.html" %}

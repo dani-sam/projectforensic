@@ -1,0 +1,25 @@
+{% include "admin_pages/admin_header.html" %}
+<table>
+    <tr>
+
+        <th>case id</th>
+        <th>evidence type</th>
+        <th>description</th>
+        <th>status</th>
+        <th>accept</th>
+        <th>reject</th>
+
+        
+    </tr> 
+{% for i in data['staff']%}
+    <tr>
+        <td>{{i['case_id']}}</td>
+        <td>{{i['evidence_type']}}</td>
+        <td>{{i['description']}}</td>d
+        <td>{{i['status']}}</td>
+        <td><a href="">accept</a></td>
+        <td><a href="">reject</a></td>
+    </tr>   
+    {%endfor%}
+</table>
+{% include "footer.html" %}

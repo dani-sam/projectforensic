@@ -1,0 +1,24 @@
+{% include "court_pages/court_header.html" %}
+<table>
+    <tr>
+        <th>case </th>
+        <th>evidence type</th>
+        <th>description</th>
+        <th>status</th>
+        <th>print</th>
+        
+        
+    </tr> 
+{% for i in data['staff']%}
+    <tr>
+        <td>{{i['case_id']}}</td>
+        <td>{{i['evidence_type']}}</td>d
+        <td>{{i['description']}}</td>
+        <td>{{i['status']}}</td>
+        <td><a href="">print</a></td>
+        
+        
+    </tr>   
+    {%endfor%}
+</table>
+{% include "footer.html" %}
