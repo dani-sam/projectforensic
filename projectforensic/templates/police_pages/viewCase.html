@@ -1,4 +1,4 @@
-{% include "admin_pages/admin_header.html" %}
+{% include "police_pages/police_header.html" %}
 <table>
     <tr>
         <th>date</th>
@@ -11,9 +11,7 @@
         <th>details of event</th>
         <th>summary</th>
         <th>report officer</th>
-        <th>assign staff for collect</th> 
-        <th>assign staff for examination</th>
-        
+        <th>print</th> 
     </tr> 
 {% for i in data['']%}
     <tr>
@@ -27,8 +25,7 @@
         <td>{{i['details_of_event']}}</td>
         <td>{{i['summary']}}</td>
         <td>{{i['reporter_officer']}}</td>
-        <td><a href="">staff for collect</a></td>
-        <td><a href="">staff for examination</a></td>
+        <td><a href="">print report</a></td>
     </tr>  
     {%endfor%}
 </table>
