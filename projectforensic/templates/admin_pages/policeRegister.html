@@ -1,12 +1,12 @@
-{% include "admin_page/admin_header.html" %}
+{% include "admin_pages/admin_header.html" %}
 
 
 
 <form  method="post">
     <table>
         <tr>
-            <th>staff</th>
-            <td><input type="text" name = "ft_id"></td>
+            <th>police station</th>
+            <td><input type="text" name = "police_station"></td>
         </tr>
         <tr>
             <th>place</th>
@@ -14,15 +14,15 @@
         </tr>
         <tr>
             <th>contact no</th>
-            <td><input type="text" name = "contact_no"></td>
+            <td><input type="tel" name = "Contact_no"></td>
         </tr>
         <tr>
             <th>email</th>
-            <td><input type="email" name = "email"></td>
+            <td><input type="email" name = "email_id"></td>
         </tr>
         <tr>
             <th>department type</th>
-            <td><input type="text" name = "department_type"></td>
+            <td><input type="text" name = "dept_type"></td>
         </tr>
         <tr>
             <th>username</th>
@@ -39,7 +39,7 @@
             
         </th>
         <td>
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" value="register">
         </td></tr>
     </table>
 </form>

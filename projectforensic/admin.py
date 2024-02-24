@@ -25,9 +25,6 @@ def manageStaff():
         photo=request.files['photo']
         path='static/staff'+str(uuid.uuid4())+photo.filename
         photo.save(path)
-
-
-
         username=request.form['username']  
         password=request.form['password']
         q1="insert into login values(null,'%s','%s','staff')"%(username,password)
@@ -38,8 +35,54 @@ def manageStaff():
     
     return render_template('admin_pages/manage_staff.html',data=data)
     
+@admin.route('/police_register',methods=['get','post'])
+def policeRegister():
+    if 'submit' in request.form:
+        policeStation=request.form['police_station']
+        place=request.form['place']
+        contactNo=request.form['contact_no']
+        email=request.form['email_id']
+        departmentType=request.form['dept_type']
+        username=request.form['username']  
+        password=request.form['password']
+        q1="insert into login values(null,'%s','%s','police')"%(username,password)
+        res = insert(q1)
+        q2="insert into police values(null,'%s','%s','%s','%s','%s','%s')"%(policeStation,place,contactNo,email,departmentType,res)
+        insert(q2)
+        return redirect(url_for('admin.policeRegister'))
+    return render_template('admin_pages/policeRegister.html')
 
- 
+@admin.route('/court_register',methods=['get','post'])
+def courtRegister():
+    if 'submit' in request.form:
+        courtName=request.form['court_name']
+        courtType=request.form['court_type']
+        place=request.form['place']
+        district=request.form['district']
+        state=request.form['state']
+        email=request.form['email_id']
+        contactNO=request.form['contact_no']
+        username=request.form['username']
+        password=request.form['password']
+        q1="insert into login values(null,'%s','%s','court')"%(username,password)
+        res = insert(q1)
+        q2="insert into court values(null,'%s','%s','%s','%s','%s','%s','%s','%s')"%(courtName,courtType,place,district,state,email,contactNO,res)
+        insert(q2)
+        return redirect(url_for('admin.courtRegister'))
+    return render_template('admin_pages/courtRegister.html')
+
+@admin.route('/view_police')
+def viewPolice():
+    data={}
+    q1 = "select * from police"
+    data['police']=select(q1)
+    return render_template('admin_pages/viewPolice.html',data=data)
 
 
+@admin.route('/view_court')
+def viewCourt():
+    data={}
+    q1 = "select * from court"
+    data['court']=select(q1)
+    return render_template('admin_pages/viewCourt.html',data=data)
 

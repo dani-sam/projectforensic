@@ -1,7 +1,7 @@
 {% include "admin_pages/admin_header.html" %}
 
 
-form  method="post" enctype="multipart/form-data">
+<form  method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <th>name</th>
@@ -133,7 +133,7 @@ form  method="post" enctype="multipart/form-data">
 {% for i in data['staff']%}
     <tr>
         <td>{{i['name']}}</td>
-        <td>{{i['position']}}</td>d
+        <td>{{i['position']}}</td>
         <td>{{i['gender']}}</td>
         <td>{{i['email_id']}}</td>
         <td>{{i['place']}}</td>
@@ -144,7 +144,7 @@ form  method="post" enctype="multipart/form-data">
         <td><a href="">update</a></td>
         <td><a href="">delete</a></td>
     </tr>
-    {%endfor%}
+{%endfor%}
 </table>
 
 {% include "footer.html" %}

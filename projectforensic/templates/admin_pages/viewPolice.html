@@ -8,14 +8,14 @@
         <th>department type</th>
         
     </tr> 
-{% for i in data['staff']%}
+{% for i in data['police']%}
     <tr>
         <td>{{i['police_station']}}</td>
-        <td>{{i['place']}}</td>d
+        <td>{{i['place']}}</td>
         <td>{{i['contact_no']}}</td>
         <td>{{i['email_id']}}</td>
         <td>{{i['dept_type']}}</td>
     </tr>   
-    {%endfor%}
+{%endfor%}
 </table>
 {% include "footer.html" %}

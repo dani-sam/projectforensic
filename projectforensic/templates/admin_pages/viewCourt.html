@@ -1,21 +1,25 @@
 {% include "admin_pages/admin_header.html" %}
 <table>
     <tr>
-        <th>name</th>
-        <th>place</th>
-        <th>email</th>
-        <th>contactNO</th>
+        <th>court name</th>
         <th>court type</th>
+        <th>place</th>
+        <th>district</th>
+        <th>state</th>
+        <th>email</th>
+        <th>contact NO</th>
         
     </tr> 
-{% for i in data['']%}
+{% for i in data['court']%}
     <tr>
-        <td>{{i['name']}}</td>
-        <td>{{i['place']}}</td>d
+        <td>{{i['court_name']}}</td>
+        <td>{{i['court_type']}}</td>
+        <td>{{i['place']}}</td>
+        <td>{{i['district']}}</td>
+        <td>{{i['state']}}</td>
         <td>{{i['email_id']}}</td>
         <td>{{i['contact_no']}}</td>
-        <td>{{i['court_type']}}</td>
     </tr>   
-    {%endfor%}
+{%endfor%}
 </table>
 {% include "footer.html" %}
