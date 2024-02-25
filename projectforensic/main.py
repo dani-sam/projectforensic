@@ -2,6 +2,7 @@ from flask import *
 from public import public
 from admin import admin
 from staff import staff
+from police import police
 
 
 app = Flask(__name__)
@@ -9,6 +10,7 @@ app = Flask(__name__)
 app.register_blueprint(public)
 app.register_blueprint(admin)
 app.register_blueprint(staff)
+app.register_blueprint(police)
 
 
 

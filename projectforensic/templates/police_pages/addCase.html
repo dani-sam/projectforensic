@@ -3,6 +3,16 @@
 
 <form  method="post" enctype="multipart/form-data">
     <table>
+
+        <tr>
+            <th>
+                police station number
+            </th>
+            <td><select name="police_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+        
         <tr>
             <th>date</th>
             <td><input type="date" name="date"></td>
@@ -25,19 +35,23 @@
         </tr>
         <tr>
             <th>latitude</th>
-            <td><input type="text" name = "latitude"></td>
+            <td><input type="number" name = "latitude"></td>
+        </tr>
+        <tr>
+            <th>longitude</th>
+            <td><input type="number" name = "longitude"></td>
         </tr>
         <tr>
             <th>details of event</th>
-            <td><textarea name="details_of_event" id="" cols="20" rows="15"></textarea></td>
+            <td><textarea name="details_of_event"  cols="15" rows="15"></textarea></td>
         </tr>
         <tr>
             <th>summary</th>
-            <td><textarea name="summary" id="" cols="30" rows="10"></textarea></td>
+            <td><textarea name="summary" cols="30" rows="10"></textarea></td>
         </tr>
         <tr>
-            <th>reporter officer</th>
-            <td><input type="text" name = "reporter_officer"></td>
+            <th>report officer</th>
+            <td><input type="text" name = "report_officer"></td>
         </tr>
         
 

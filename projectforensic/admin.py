@@ -22,7 +22,7 @@ def manageStaff():
         district=request.form['district']
         state=request.form['state']
         contactNo=request.form['contact_no']
-        photo=request.files['photo']
+        photo=request.files['photo'] 
         path='static/staff'+str(uuid.uuid4())+photo.filename
         photo.save(path)
         username=request.form['username']  
