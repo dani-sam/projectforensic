@@ -2,10 +2,6 @@
 <form  method="post" enctype="multipart/form-data">
     <table>
         <tr>
-            <th>evidence type</th>
-            <td><input type="text" name="evidence_type"></td>
-        </tr>
-        <tr>
             <th>
                 case
             </th>
@@ -13,10 +9,17 @@
                 <option value=""></option>
             </select></td>
         </tr>
-        
+        <tr>
+            <th>evidence type</th>
+            <td><input type="text" name="evd_type"></td>
+        </tr>
         <tr>
             <th>Description</th>
-            <td><textarea name="description" id="" cols="30" rows="10"></textarea></td>
+            <td><textarea name="desc" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>status</th>
+            <td><input type="text" name="status"></td>
         </tr>
         
         <th>

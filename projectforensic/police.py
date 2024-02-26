@@ -12,7 +12,7 @@ def userHome():
 @police.route('/add_case',methods=['get','post'])
 def addCase():
     if 'submit' in request.form:
-        polid=request.form['police_id']
+        polId=request.form['police_id']
         date=request.form['date']
         time=request.form['time']
         place=request.form['place']
@@ -26,7 +26,7 @@ def addCase():
         summary=request.form['summary']
         reportOfficer=request.form['report_officer']
 
-        q1="insert into cases values(null,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(polid,date,time,place,caseType,path,latitude,longitude,detailOfEvents,summary,reportOfficer)
+        q1="insert into cases values(null,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(polId,date,time,place,caseType,path,latitude,longitude,detailOfEvents,summary,reportOfficer)
         insert(q1)
         return redirect(url_for('police.addCase'))
     return render_template('police_pages/addCase.html')
