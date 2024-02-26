@@ -22,7 +22,7 @@ def addCase():
         photo.save(path)
         latitude=request.form['latitude']
         longitude=request.form['longitude']
-        detailOfEvents=request.form['details_of_event']
+        detailOfEvents=request.form['detail_of_event']
         summary=request.form['summary']
         reportOfficer=request.form['report_officer']
 
@@ -30,3 +30,10 @@ def addCase():
         insert(q1)
         return redirect(url_for('police.addCase'))
     return render_template('police_pages/addCase.html')
+
+@police.route('/view_case')
+def viewCase():
+    data={}
+    q1 = "select * from cases"
+    data['cases']=select(q1)
+    return render_template('police_pages/viewCase.html',data=data)
