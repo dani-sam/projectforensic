@@ -9,6 +9,10 @@ def courtHome():
 
 @court.route('/request_evidence',methods=['get','post'])
 def requestEvidence():
+    data={}
+    d="select * from cases" 
+    data['cases']=select(d)
+
     if 'submit' in request.form:
         caseId=request.form['case_id']
         evdType=request.form['evd_type']
@@ -17,4 +21,4 @@ def requestEvidence():
         q1="insert into request_evidence  values(null,'%s','%s','%s','%s')"%(caseId,evdType,description,status)
         insert(q1)
         return redirect(url_for('court.requestEvidence'))
-    return render_template('court_pages/requestEvidence.html')
+    return render_template('court_pages/requestEvidence.html',data=data)

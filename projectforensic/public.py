@@ -34,7 +34,7 @@ def login():
                     </script>"""
             
             elif res[0]['usertype'] == 'user':
-                q2 = "select * from user where log_in_id = '%s' "%(session['login_id'])
+                q2 = "select * from user where login_id = '%s' "%(session['login_id'])
                 res1 = select(q2)
                 if res1:
                     session['user_id'] = res1[0]['user_id']
@@ -44,5 +44,41 @@ def login():
                     alert('login successful');
                     window.location='user_home'
                     </script>"""
+                
+            elif res[0]['usertype'] == 'police':
+                q2 = "select * from police where login_id = '%s' "%(session['login_id'])
+                res1 = select(q2)
+                if res1:
+                    session['police_id'] = res1[0]['police_id']
+
+                    return """
+                    <script>
+                    alert('login successful');
+                    window.location='police_home'
+                    </script>"""
+            
+            elif res[0]['usertype'] == 'staff':
+                q2 = "select * from staff where login_id = '%s' "%(session['login_id'])
+                res1 = select(q2)
+                if res1:
+                    session['staff_id'] = res1[0]['ft_id']
+
+                    return """
+                    <script>
+                    alert('login successful');
+                    window.location='staff_home'
+                    </script>"""
+            elif res[0]['usertype'] == 'court':
+                q2 = "select * from court where login_id = '%s' "%(session['login_id'])
+                res1 = select(q2)
+                if res1:
+                    session['court_id'] = res1[0]['court_id']
+
+                    return """
+                    <script>
+                    alert('login successful');
+                    window.location='court_home'
+                    </script>"""    
+            
 
     return render_template('login.html')

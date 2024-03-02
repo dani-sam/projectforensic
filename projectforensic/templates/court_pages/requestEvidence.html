@@ -6,7 +6,9 @@
                 case
             </th>
             <td><select name="case_id" id="">
-                <option value=""></option>
+                {% for i in data['cases'] %}
+                <option value="{{i['case_id']}}">{{i['case_type']}}</option>
+                {% endfor %}
             </select></td>
         </tr>
         <tr>
