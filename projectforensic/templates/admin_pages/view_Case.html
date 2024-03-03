@@ -1,6 +1,7 @@
 {% include "admin_pages/admin_header.html" %}
 <table>
     <tr>
+        <th>case no:</th>
         <th>date</th>
         <th>time</th>
         <th>place</th>
@@ -15,15 +16,16 @@
         <th>assign staff for examination</th>
         
     </tr> 
-{% for i in data['']%}
+{% for i in data['cases']%}
     <tr>
+        <td>{{i['case_id']}}</td>
         <td>{{i['date']}}</td>
-        <td>{{i['time']}}</td>d
+        <td>{{i['time']}}</td>
         <td>{{i['place']}}</td>
         <td>{{i['type']}}</td>
-        <td><img src="{{i['photo']}}" alt=" no img" width="200" height="200"></td>
+        <td><img src="{{i['case_photo']}}" alt=" no img" width="200" height="200"></td>
         <td>{{i['latitude']}}</td>
-        <td>{{i['longitude']}}</td>d
+        <td>{{i['longitude']}}</td>
         <td>{{i['details_of_event']}}</td>
         <td>{{i['summary']}}</td>
         <td>{{i['reporter_officer']}}</td>

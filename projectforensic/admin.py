@@ -86,3 +86,10 @@ def viewCourt():
     data['court']=select(q1)
     return render_template('admin_pages/viewCourt.html',data=data)
 
+
+@admin.route('/view_cases')
+def viewCases():
+    data={}
+    q1 = "select * from cases"
+    data['cases']=select(q1)
+    return render_template('admin_pages/view_Case.html',data=data)

@@ -7,6 +7,10 @@ staff = Blueprint('staff',__name__)
 def userHome():
     return render_template('staff_pages/staff_home.html')
 
+@staff.route('/update_profile')
+def updateProfile():
+    return render_template('staff_pages/update_profile.html')
+
 @staff.route('/attendance',methods=['get','post'])
 def staffAttendance():
     if 'submit' in request.form:
