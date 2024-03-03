@@ -13,7 +13,7 @@ def staffAttendance():
         date=request.form['date']
         sTime=request.form['start_time']
         eTime=request.form['end_time']
-        q1="insert into attendence values(null,'%s','%s','%s','%s')"%(session['staff_id'],date,sTime,eTime)
+        q1="insert into attendance values(null,'%s','%s','%s','%s')"%(session['staff_id'],date,sTime,eTime)
         insert(q1)
         return redirect(url_for('staff.staffAttendance'))
-    return render_template('staff_pages/attendence.html')
+    return render_template('staff_pages/attendance.html')

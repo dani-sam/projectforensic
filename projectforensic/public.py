@@ -72,7 +72,7 @@ def login():
                 q2 = "select * from court where login_id = '%s' "%(session['login_id'])
                 res1 = select(q2)
                 if res1:
-                    session['court_id'] = res1[0]['court_id']
+                    session['court'] = res1[0]['court_id']
 
                     return """
                     <script>
