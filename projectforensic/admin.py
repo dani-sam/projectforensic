@@ -93,3 +93,18 @@ def viewCases():
     q1 = "select * from cases"
     data['cases']=select(q1)
     return render_template('admin_pages/view_Case.html',data=data)
+
+
+@admin.route('/assign_collect',methods=['get','post'])
+def assignCollect():
+    data={}
+    d="select * from staff" 
+    data['staff']=select(d)
+    if 'submit' in request.form:
+        forensicStaffId=request.form['ft_id']
+        cid=request.args['caseid']
+        q2="insert into allocate_staff values(null,'%s','%s','pending','collect')"%(forensicStaffId,cid)
+        insert(q2)
+        return redirect(url_for('admin.assignCollect'))
+
+    return render_template('admin_pages/asg_collect.html',data=data)
