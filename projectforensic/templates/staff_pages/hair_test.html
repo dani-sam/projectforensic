@@ -1,0 +1,72 @@
+{% include "staff_pages/staff_header.html" %}
+
+<form  method="post" enctype="multipart/form-data">
+    <table>
+        
+        <tr>
+            <th>
+                case no:
+            </th>
+            <td><select name="case_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>
+                staff no:
+            </th>
+            <td><select name="ft_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>hair fiber</th>
+            <td><input type="file" name="hair_fiber"></td>
+        </tr>
+        <tr>
+            <th>dia_medu</th>
+            <td><input type="file" name = "dia_medu"></td>
+        </tr>
+        <tr>
+            <th>dia_hair</th>
+            <td><input type="file" name = "dia_hair"></td>
+        </tr>
+        <tr>
+            <th>which part</th>
+            <td><input type="file" name = "which_part"></td>
+        </tr>
+        <tr>
+            <th>image</th>
+            <td><input type="file" name = "image"></td>
+        </tr>
+        <tr>
+            <th>pre_barr_bodies</th>
+            <td><input type="file" name = "pre_barr_bodies"></td>
+        </tr>
+        <tr>
+            <th>type</th>
+            <td><input type="radio" name = "animal_or_human" value="human">human
+            <input type="radio" name = "animal_or_human" value="animal">animal</td>
+        </tr>
+        <tr>
+            <th>gender</th>
+            <td><input type="radio" name = "gender" value="male">male
+            <input type="radio" name = "gender" value="female">female</td>
+        </tr>
+        <tr>
+            <th>HairTest status</th>
+            <td><input type="text" name = "ht_status"></td>
+        </tr>
+        <tr>
+        <th>
+            
+        </th>
+        <td>
+            <input type="submit" name="submit" value="add">
+        </td></tr>
+    </table>
+</form>
+
+{% include "footer.html" %}

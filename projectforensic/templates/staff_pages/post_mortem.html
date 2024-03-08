@@ -1,0 +1,66 @@
+{% include "staff_pages/staff_header.html" %}
+
+<form  method="post" enctype="multipart/form-data">
+    <table>
+        
+        <tr>
+            <th>
+                case no:
+            </th>
+            <td><select name="case_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>
+                staff no:
+            </th>
+            <td><select name="ft_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>body_temp</th>
+            <td><input type="file" name="body_temp"></td>
+        </tr>
+        <tr>
+            <th>change_in_eye</th>
+            <td><input type="file" name = "change_in_eye"></td>
+        </tr>
+        <tr>
+            <th>liver_mertis</th>
+            <td><input type="file" name = "liver_mertis"></td>
+        </tr>
+        <tr>
+            <th>degradation</th>
+            <td><input type="file" name = "degradation"></td>
+        </tr>
+        <tr>
+            <th>time_snc_death_in_hrs</th>
+            <td><input type="time" name = "time_snc_death_in_hrs"></td>
+        </tr>
+        <tr>
+            <th>degradation_time</th>
+            <td><input type="time" name = "degradation_time"></td>
+        </tr>
+        <tr>
+            <th>date & time</th>
+            <td><input type="datetime-local" name = "date_time"></td>
+        </tr>
+        <tr>
+            <th>postmortem status</th>
+            <td><input type="text" name = "pm_status"></td>
+        </tr>
+        <tr>
+        <th>
+            
+        </th>
+        <td>
+            <input type="submit" name="submit" value="add">
+        </td></tr>
+    </table>
+</form>
+
+{% include "footer.html" %}

@@ -1,0 +1,65 @@
+{% include "staff_pages/staff_header.html" %}
+
+<form  method="post" enctype="multipart/form-data">
+    <table>
+        
+        <tr>
+            <th>
+                case no:
+            </th>
+            <td><select name="case_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>
+                staff no:
+            </th>
+            <td><select name="ft_id">
+                <option value=""></option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <th>pattern</th>
+            <td><input type="file" name="pattern"></td>
+        </tr>
+        <tr>
+            <th>ref_point</th>
+            <td><input type="file" name = "ref_point"></td>
+        </tr>
+        <tr>
+            <th>met_of_coll</th>
+            <td><input type="file" name = "met_of_coll"></td>
+        </tr>
+        <tr>
+            <th>add info</th>
+            <td><input type="file" name = "add_info"></td>
+        </tr>
+        <tr>
+            <th>image</th>
+            <td><input type="file" name = "image"></td>
+        </tr>
+        <tr>
+            <th>date & time</th>
+            <td><input type="datetime-local" name = "date_time"></td>
+        </tr>
+        <tr>
+            <th>fingerprint status</th>
+            <td><input type="text" name = "f_status"></td>
+        </tr>
+        
+      
+
+        <tr>
+        <th>
+            
+        </th>
+        <td>
+            <input type="submit" name="submit" value="add">
+        </td></tr>
+    </table>
+</form>
+
+{% include "footer.html" %}
