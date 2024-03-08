@@ -21,3 +21,27 @@ def staffAttendance():
         insert(q1)
         return redirect(url_for('staff.staffAttendance'))
     return render_template('staff_pages/attendance.html')
+
+@staff.route('/fingerprint')
+def fingerprint():
+    return render_template('staff_pages/fingerprint.html')
+
+@staff.route('/footprint')
+def footprint():
+    return render_template('staff_pages/footprint.html')
+
+@staff.route('/hair_test')
+def hairTest():
+    return render_template('staff_pages/hair_test.html')
+
+@staff.route('/video_audio')
+def video_audio():
+    return render_template('staff_pages/video_audio.html')
+
+@staff.route('/teeth')
+def teeth():
+    return render_template('staff_pages/teeth.html')
+
+@staff.route('/post_mortem')
+def postMortem():
+    return render_template('staff_pages/post_mortem.html')
