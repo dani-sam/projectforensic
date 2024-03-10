@@ -32,6 +32,19 @@ def manageStaff():
         q2="insert into staff values(null,'%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(name,position,gender,email,place,district,state,contactNo,path,res)
         insert(q2)
         return redirect(url_for('admin.manageStaff'))
+    if 'action' in request.args:
+        action=request.args['action']
+        sid=request.args['sid']
+    else:
+        action=None
+    if action=='delete':
+        q1="delete from staff where ft_id='%s'"%(sid)
+        delete(q1)
+        return """
+                    <script>
+                    alert('delete successful');
+                    window.location='manage_staff'
+                    </script>"""
     
     return render_template('admin_pages/manage_staff.html',data=data)
     

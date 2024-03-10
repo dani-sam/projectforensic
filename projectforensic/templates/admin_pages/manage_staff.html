@@ -1,5 +1,8 @@
 {% include "admin_pages/admin_header.html" %}
 
+
+
+
 <form  method="post" enctype="multipart/form-data">
     <table>
         <tr>
@@ -86,8 +89,8 @@
         <td>{{i['state']}}</td>
         <td>{{i['contact_no']}}</td>
         <td><img src="{{i['photo']}}" alt=" no img" width="200" height="200"></td>
-        <td><a href="">update</a></td>
-        <td><a href="">delete</a></td>
+        <td><a href="?action=update&sid={{i['ft_id']}}">update</a></td>
+        <td><a href="?action=delete&sid={{i['ft_id']}}">delete</a></td>
     </tr>
 {%endfor%}
 </table>
