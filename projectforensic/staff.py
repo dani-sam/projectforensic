@@ -9,7 +9,10 @@ def userHome():
 
 @staff.route('/update_profile')
 def updateProfile():
-    return render_template('staff_pages/update_profile.html')
+    data={}
+    q1 = "select * from staff where ft_id='%s'"%(session['staff_id'])
+    data['staff']=select(q1)
+    return render_template('staff_pages/update_profile.html',data=data)
 
 @staff.route('/attendance',methods=['get','post'])
 def staffAttendance():
