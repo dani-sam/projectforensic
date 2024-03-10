@@ -1,4 +1,5 @@
 {% include "police_pages/police_header.html" %}
+<div class="div_print">
 <table>
     <tr>
         <th>police id</th>
@@ -15,9 +16,9 @@
         <th>print</th> 
     </tr> 
 {% for i in data['cases']%}
-    <tr>
+    <tr id="div_print">
         <td>{{i['police_id']}}</td>
-        <td>{{i['date']}}</td>
+        <td>{{i['date']}} <br> </td>
         <td>{{i['time']}}</td>
         <td>{{i['place']}}</td>
         <td>{{i['case_type']}}</td>
@@ -27,8 +28,20 @@
         <td>{{i['detail_of_event']}}</td>
         <td>{{i['summary']}}</td>
         <td>{{i['report_officer']}}</td>
-        <td><a href="">print report</a></td>
+        <td><button onclick="printDiv()" > print </button></td>
     </tr>  
 {%endfor%}
 </table>
+</div>
+
+<script> 
+    function printDiv() { 
+      var divContents = document.getElementById("div_print").innerHTML; 
+      var a = window.open('', '', 'height=500, width=500'); 
+      a.document.write(divContents); 
+      a.document.close(); 
+      a.print(); 
+    } 
+  </script>
+
 {% include "footer.html" %}
