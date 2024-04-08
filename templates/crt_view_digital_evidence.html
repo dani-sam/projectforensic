@@ -1,0 +1,39 @@
+<center>
+	<form method="post">
+		<h1 style="color: black">VIEW CRIME EVIDENCE</h1>
+
+<br><br><br><br>
+		<h2>DIGITAL EVIDANCE</h2>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			<th style="color: black">AUDIO:</th>
+			<th style="color: black">VIDEO:</th>
+			<th style="color: black">DATE:</th>
+			
+
+		</tr>
+
+			{% for i in data['jk'] %}
+		<tr>
+            <td style="color: black"><audio controls>
+				
+				<source src="/{{i.audio}}" type="audio/mpeg">
+				Your browser does not support the audio tag.
+			  </audio></td>
+            <td style="color: black"><video width="320" height="240" controls>
+                <source src="/{{i.video}}" type="video/mp4">
+               
+                Your browser does not support the video tag.
+              </video></td>
+			<td style="color: black">{{i['date_time']}}</td>
+			
+		</tr>
+		{% endfor %}
+</table>
+
+
+</center>
+</div>
+	
+ 
+{% include "footer.html"%}

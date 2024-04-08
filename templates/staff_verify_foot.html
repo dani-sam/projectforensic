@@ -1,0 +1,74 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">PODOGRAPHY</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+
+				<th style="color:white">LENGTH OF THE RIGHT FOOT </th>
+				<th style="color:white">LENGTH OF THE LEFT FOOT</th>
+
+				<th style="color:white">WIDTH OF THE RIGHT FOOT</th>
+
+				<th style="color:white">WIDTH OF THE LEFT FOOT</th>
+
+				<th style="color:white">ADDITIONAL INFO</th>
+				<th style="color:white">HEIGHT </th>
+				<th style="color:white">GENDER </th>
+				<th style="color:white">DATE TIME</th>
+
+
+				
+			</tr>
+
+
+
+
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white">{{j['right_len']}}</td>
+				<td style="color: white">{{j['left_len']}}</td>
+				<td style="color: white">{{j['right_width']}}</td>
+				<td style="color: white">{{j['left_width']}}</td>
+				<td style="color: white">{{j['add_info']}}</td>
+				<td style="color: white">{{j['height']}}</td>
+				<td style="color: white">{{j['gender']}}</td>
+				<td style="color: white">{{j['date_time']}}</td>
+				{%if j['ft_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}	
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

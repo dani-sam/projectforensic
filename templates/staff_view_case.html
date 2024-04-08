@@ -1,0 +1,55 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">CASES</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: black">SL No.</th>
+				<th style="color: black">CASE NUM</th>
+				<th style="color: black">OFFICER</th>
+				<th style="color: black">DESIGNATION</th>
+				<th style="color: black">TYPE OF CRIME</th>
+				
+			</tr>
+
+			<tr>
+				{% for j in data1['x'] %}
+				<td style="color: black">{{loop.index}}</td>
+				<td style="color: black">{{j['case_num']}}</td>
+				<td style="color: black">{{j['fname']}} {{j['lname']}}</td>
+				<td style="color: black">{{j['designation']}}</td>
+				<td style="color: black">{{j['type_of_crime']}}</td>
+				<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{ j['latitude'] }},{{ j['longitude'] }}">Click Me</a></td>
+			</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

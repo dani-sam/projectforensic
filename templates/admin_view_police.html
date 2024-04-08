@@ -1,0 +1,64 @@
+{% include "admin_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top w3layouts-banner-top2">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+
+
+<center>
+	<h1 style="color: white">REGISTERED POLICE STATION</h1>
+	<table border="2" class="table" style="width: 1000px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			<th style="color: black">Sl No.</th>
+			<th style="color: black">STATION</th>
+			<th style="color: black">STATION NUMBER</th>
+			<th style="color: black">ZONE</th>
+			<th style="color: black">DISTRICT</th>
+			<th style="color: black">ADDRESS</th>
+			<th style="color: black">PHONE</th>
+			<th style="color: black">EMAIL</th>
+		</tr>
+
+		
+			{% for j in data1['i'] %}
+		<tr>
+			<td style="color: black">{{loop.index}}</td>
+			<td style="color: black">{{j['station_name']}}</td>
+			<td style="color: black">{{j['st_reg_num']}}</td>
+			<td style="color: black">{{j['zone']}}</td>
+			<td style="color: black">{{j['district']}}</td>
+			<td style="color: black">{{j['address']}}</td>
+			<td style="color: black">{{j['phone']}}</td>
+			<td style="color: black">{{j['email']}}</td>
+			{% if j['status']=='pending' %}
+			<td><a class="btn btn-danger" href="?action=accept&id={{j['login_id']}}">Accept</a></td>
+			<td><a class="btn btn-danger" href="?action=delete&id={{j['login_id']}}">DELETE</a></td>
+			{% endif %}
+			<!-- <td><a class="btn btn-warning" href="admin_view_crimess?id={{j['station_num']}}">View Crimes</a></td> -->
+		</tr>
+
+		{% endfor %}
+
+	</table>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

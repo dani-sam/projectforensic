@@ -1,0 +1,64 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">THANATOLOGY</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+		<th style="color:white">BODY TEMPERATURE</th>
+
+		<th style="color:white">CHANGES IN THE EYES</th>
+
+		<th style="color:white">LIVOR MORTIS</th>
+
+		<th style="color:white">DEGRADITION</th>
+		<th style="color:white">TIME SINCE DEATH IN HOURS</th>
+
+		<th style="color:white">DEGRADITION TIME </th>
+				
+			</tr>
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white">{{j['body_temp']}}</td>
+				<td style="color: white">{{j['changes_in_eye']}}</td>
+				<td style="color: white">{{j['livor_mortis']}}</td>
+				<td style="color: white">{{j['degradation']}}</td>
+				<td style="color: white">{{j['time_snc_death_in_hrs']}}</td>
+				<td style="color: white">{{j['degradation_time']}}</td>
+				{%if j['pm_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}	
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

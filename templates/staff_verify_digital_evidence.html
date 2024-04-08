@@ -1,0 +1,55 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+		<h1 style="color: white">DIGITAL EVIDENCES</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+
+				<th style="color: white">AUDIO </th>
+
+				<th style="color: white">VIDEO</th>
+
+				
+			</tr>
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white"><a class="btn btn-success" href="/{{j['audio']}}">audio file</a></td>
+				<td style="color: white"><a class="btn btn-warning" href="/{{j['video']}}">video file</a></td>{{j['video']}}
+				{%if j['va_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}	
+			</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

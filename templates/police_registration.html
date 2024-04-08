@@ -1,0 +1,140 @@
+{% include "public_header.html" %}
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+
+<script type="text/javascript">
+	var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'blue';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
+<center>
+	<h1 style="color: white">POLICE STATION REGISTRATION</h1>
+	<form method="post">
+		
+		<table class="table" style="width: 700px">
+			
+
+			<tr>
+				<th style="color: white">STATION REG NUM</th>
+				<td><input type="text" required="" class="form-control" name="reg_num"></td>
+			</tr>
+
+			<tr>
+				<th style="color: white">ZONE</th>
+				<td>
+					<select name="zone" required="" class="form-control">
+						<option>SOUTH ZONE</option>
+						<option>NORTH ZONE</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color: white">DISTRICT</th>
+				<td>
+					<select name="district" required="" class="form-control">
+						<option>THIRUVANANTHAPURAM</option>
+						<option>KOLLAM</option>
+						<option>PATHANAMTHITTA</option>
+						<option>ALAPPUZHA</option>
+						<option>KOTTAYAM</option>
+						<option>IDUKKI</option>
+						<option>ERNAKULAM</option>
+						<option>THRISSUR</option>
+						<option>PALAKKAD</option>
+						<option>MALAPPURAM</option>
+						<option>KOZHIKODE</option>
+						<option>WAYANAD</option>
+						<option>KANNUR</option>
+						<option>KASARGOD</option>						
+					</select>
+				</td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">CITY</th>
+			 	<td><input type="text" required="" class="form-control" name="city"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">PINCODE</th>
+			 	<td><input type="text" minlength="6" maxlength="6" required="" pattern="[0-9]{6}" class="form-control" name="pincode"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">STATION NAME</th>
+			 	<td><input type="text" required="" class="form-control" name="stname"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">ADDRESS</th>
+			 	<td><input type="text" required="" class="form-control" name="adr"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">EMAIL</th>
+			 	<td><input type="email" required="" class="form-control" name="email"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">PHONE NUMBER</th>
+			 	<td><input type="text" required="" pattern="[0-9]{10}" minlength="10" maxlength="10" class="form-control" name="num1"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">ALTERNATE PHONE NUMBER</th>
+			 	<td><input type="textt" pattern="[0-9]{10}" minlength="10" maxlength="10" required="" class="form-control" name="altnum"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">USERNAME</th>
+			 	<td><input type="text" required="" class="form-control" name="uname"></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">PASSWORD</th>
+			 	<td><input type="password" required="" class="form-control" name="pass" id="password" onkeyup='check();' ></td>
+			 </tr>
+
+			 <tr>
+			 	<th style="color: white">RETYPE PASSWORD</th>
+			 	<td><input type="password" required="" class="form-control" name="pass1" id="confirm_password"  onkeyup='check();' >
+			 	<td><span id='message'></span></td>
+			 	</td>
+			 </tr>
+
+			 <tr>
+			 	<td colspan="2" align="center"><input type="submit" class="btn btn-info" name="register" value="REGISTER"></td>
+			 </tr>
+		</table>
+	</form>
+	
+</center>
+
+</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{%include "footer.html" %}

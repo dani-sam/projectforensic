@@ -1,0 +1,56 @@
+{% include "admin_header.html" %}
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center> 
+<h1 style="color: white">FORENIC STAFF DETAILS</h1>
+<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);"> 	
+<tr>
+	<th style="color: black">SL No.</th>
+	<th style="color: black">NAME</th>
+	<th style="color: black">GENDER</th>
+	<th style="color: black">DISTRICT</th>
+	<th style="color: black">PHONE</th>
+	<th style="color: black">ALTERNATIVE PHONE</th>
+	<th style="color: black">EMAIL</th>
+	<th style="color: black">DATE OF JOINING</th>
+	<th style="color: black">IMAGE</th>
+</tr>
+
+{% for j in data['i'] %}
+<tr>
+	<td style="color: black">{{loop.index}}</td>
+	<td style="color: black">{{j['name']}}</td>
+	<td style="color: black">{{j['gender']}}</td>
+	<td style="color: black">{{j['district']}}</td>
+	<td style="color: black">{{j['phone']}}</td>
+	<td style="color: black">{{j['alt_phone']}}</td>
+	<td style="color: black">{{j['email']}}</td>
+	<td style="color: black">{{j['doj']}}</td>
+	<td style="color: black"><a href="/{{j['photo']}}"><img src="/{{j['photo']}}" height="100" width="100"></a></td>
+	<td><a class="btn btn-danger" href="?action=delete&id={{j['login_id']}}">DELETE</a></td>
+</tr>
+{% endfor %}
+</table>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

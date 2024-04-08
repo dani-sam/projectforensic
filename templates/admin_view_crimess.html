@@ -1,0 +1,61 @@
+{% include "admin_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<form method="post">
+		<h1 style="color: white">VIEW CRIMES</h1>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			<th style="color: black">SL No</th>
+			<th style="color: black">STATION NAME</th>
+			<th style="color: black">OFFICER NAME</th>
+			<th style="color: black">CASE NUMBER</th>
+			<th style="color: black">TYPE OF CRIME</th>
+			<th style="color: black">LOCATION</th>
+	
+			<th style="color: black">STATUS</th>
+		</tr>
+
+		
+			{% for j in data['k'] %}
+		<tr>
+			<td style="color: black">{{loop.index}}</td>
+			<td style="color: black">{{j['station_name']}}</td>
+			<td style="color: black">{{j['name']}}</td>
+			<td style="color: black">{{j['case_num']}}</td>
+			<td style="color: black">{{j['type_of_crime']}}</td>
+	
+			<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{ j['latitude'] }},{{ j['longitude'] }}">Click Me</a></td>
+			{% if j['status']=="pending" %}
+			<td><a class="btn btn-warning" href="admin_assign_staff?ids={{j['crime_num']}}">ASSIGN FOR COLLECTION</a></td>
+			{% elif j['status']=="COLLECTION COMPLETED" %}
+			<td><a class="btn btn-danger" href="admin_assign_staff_for_examination?ids={{j['crime_num']}}">ASSIGN FOR EXAMINATION</a></td>
+			{% else %}
+			<td style="color: black">{{j['status']}}</td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+	</form>
+</center>
+	</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html"%}

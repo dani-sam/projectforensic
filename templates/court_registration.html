@@ -1,0 +1,144 @@
+{% include "public_header.html" %}
+
+
+
+<script type="text/javascript">
+	var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'blue';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top w3layouts-banner-top2" style="background-image: url('/static/images/co.jpg');">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">COURT RGISTRATION</h1>
+	<form method="post">
+		<table class="table" style="width: 800px">
+			<tr>
+				<th style="color:white">REG NUM </th>
+				<td><input required="" class="form-control" type="text" name="regnum"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">COURT NAME</th>
+				<td><input required="" class="form-control" type="text" name="cname"></td>
+			</tr>
+
+			
+			<tr>
+				<th style="color:white">TYPE OF COURT</th>	
+				<td>
+					<select name="ty_court" required="" class="form-control">
+						<option>MUNSIF COURT</option>
+						<option>DISTRICT COURT</option>
+						<option>HIGH COURT</option>
+				</td>
+			</tr>
+
+			
+			<tr>
+				<th style="color:white">STATE</th>
+				<td>
+					<select name="state" required="" class="form-control">
+						<option>KERALA</option>
+						<option>TAMIL NADU</option>
+						<option>KARNATAKA</option>
+						<option>ANDHRA PRADESH</option>
+						<option>GOA</option>
+						<option>TELANGANA</option>
+						<option>MAHARASHTRA</option>
+						<option>GUJARAT</option>
+						<option>MADHYA PRADESH</option>
+						<option>CHHATTUSGARH</option>	
+						<option>ODISHA</option>
+						<option>WEST BENGAL</option>
+						<option>JHARKHAND</option>
+						<option>WEST BENGAL</option>
+						<option>BIHAR</option>
+						<option>PUNJAB</option>					
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color:white">DISTRICT</th>
+				<td><input required="" class="form-control" type="text" name="dis"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">ADDRESS</th>
+				<td><input required="" class="form-control" type="text" name="addr"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">PINCODE</th>
+				<td><input required="" class="form-control" pattern="[0-9]{6}" minlength="6" maxlength="6" type="text" name="pin"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">EMAIL</th>
+				<td><input required="" class="form-control" type="email" name="mail"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">OFFICE PHONE NUMBER </th>
+				<td><input required="" class="form-control" type="text" pattern="[0-9]{10}" minlength="10" maxlength="10" name="phone1"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">ALTERNATIVE PHONE NUMBER</th>
+				<td><input required="" class="form-control" pattern="[0-9]{10}" minlength="10" maxlength="10" type="text" name="phone2"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">OFFICER NAME</th>
+				<td><input required="" class="form-control" type="text" name="name"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">USERNAME</th>
+				<td><input required="" class="form-control" type="text" name="uname"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">PASSWORD</th>
+				<td><input required="" class="form-control" type="password" name="pass"  id="password" onkeyup='check();'></td>
+			</tr>
+
+			<tr>
+			<th style="color:white">RETYPE PASSWORD</th>
+			<td><input required="" class="form-control" type="password" name="pass1"  id="confirm_password" onkeyup='check();'></td>
+			<td><span id='message'></span></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-success" type="submit" name="reg" value="REGISTER"></td>
+			</tr>
+		</table>
+	</form>
+</center>
+
+</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+{% include "footer.html" %}

@@ -1,0 +1,79 @@
+{% include "staff_header.html" %}
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<form method="post">
+		<table class="table" style="width: 500px">
+			<tr>
+				{%for row in data['fingerprints']%}
+				{%if row['f_status']=="pending"%}
+				<td colspan="2" align="center"><input class="btn btn-success" type="submit" name="verify_fing" value="DACTYLOGRAPHY "></td>
+				{%else%}
+				<td><input class="btn btn-success" type=""  value="DACTYLOGRAPHY " readonly=""></td>
+				{%endif%}
+				{%endfor%}
+			</tr>
+
+			<tr>
+				{%for row in data['footprints']%}
+				{%if row['ft_status']=="pending"%}				
+				<td colspan="2" align="center"><input type="submit" class="btn btn-warning" name="verify_foot" value="PODOGRAPHY "></td>
+				{%else%}
+				<td><input class="btn btn-warning" type=""  value="PODOGRAPHY " readonly=""></td>
+				{%endif%}
+				{%endfor%}
+			</tr>
+
+			<tr>
+				{%for row in data['hair_tests']%}
+				{%if row['ht_status']=="pending"%}
+				<td colspan="2" align="center"><input class="btn btn-danger" type="submit" name="verify_hair" value="TRICHOLOGY"></td>
+				{%else%}
+				<td><input class="btn btn-danger" type=""  value="TRICHOLOGY " readonly=""></td>
+				{%endif%}
+				{%endfor%}
+			</tr>
+
+			<tr>
+				{%for row in data['teeths']%}
+				{%if row['t_status']=="pending"%}
+				<td colspan="2" align="center"><input type="submit" class="btn btn-primary" name="verify_teeth" value="ODONTOLOGY"></td>
+				{%else%}
+				<td><input class="btn btn-primary" type=""  value="ODONTOLOGY " readonly=""></td>
+				{%endif%}
+				{%endfor%}	
+			</tr>
+			
+			<tr>
+				{%for row in data['post_mortems']%}
+				{%if row['pm_status']=="pending"%}	
+				<td colspan="2" align="center"><input type="submit" class="btn btn-success" name="verify_post_mortem" value="THANATOLOGY "></td>
+				{%else%}
+				<td><input class="btn btn-primary" type=""  value="THANATOLOGY " readonly=""></td>
+				{%endif%}
+				{%endfor%}
+			</tr>
+		</table>
+	</form>
+
+</center>
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+{% include "footer.html" %}

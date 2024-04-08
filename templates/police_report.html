@@ -1,0 +1,208 @@
+{% include "police_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<script> 
+		function printDiv() { 
+			var divContents = document.getElementById("div_print").innerHTML; 
+			var a = window.open('', '', 'height=500, width=500'); 
+			a.document.write(divContents); 
+			a.document.close(); 
+			a.print(); 
+		} 
+	</script> 
+<body onload="printDiv()">
+	<div id="div_print" >
+
+
+
+
+
+
+<center>
+	<form method="post">
+		<h1 style="color: black">VIEW CRIME DETAILS</h1>
+
+
+		<h2>FINGERPRINT DETAILS</h2>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			
+			<th style="color: black">FINGER PRINT PATTERN OBTAINED IS:</th>
+			<th style="color: black">REFERENCE POINT OF COMPARISON IDENTIFIED IS:</th>
+			<th style="color: black"> METHOD OF COLLECTION USED IS:</th>
+			<th style="color: black">ADDITIONAL INFORMATIONS IF ANY:</th>
+			<th style="color: black">PHOTO</th>
+			<th style="color: black">DATE & TIME</th>
+
+		</tr>
+
+			{% for j in data['fingerprints'] %}
+		<tr>
+			<td style="color: black">{{data['fingerprints'][0]['pattern']}}</td>
+			<td style="color: black">{{data['fingerprints'][0]['ref_point']}}</td>
+			<td style="color: black">{{data['fingerprints'][0]['met_of_coll']}}</td>
+			<td style="color: black">{{data['fingerprints'][0]['add_info']}}</td>
+			<td style="color: black"><img src="/{{data['fingerprints'][0]['date_time']}}" height="100" width="100"></td>
+			<td style="color: black">{{data['fingerprints'][0]['date_time']}}</td>
+			
+		</tr>
+		{% endfor %}
+</table>
+
+		<h2>FOOTPRINT DETAILS</h2>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			
+			<th style="color: black">LENGTH OF LEFT FOOT IS:</th>
+			<th style="color: black">WIDTH OF LEFT FOOT IS:</th>
+			<th style="color: black">LENGTH OF RIGHT FOOT IS:</th>
+			<th style="color: black">WIDTH OF RIGHT FOOT IS:</th>
+			<th style="color: black">ADDITIONAL INFORMATIONS IF ANY:</th>
+			<th style="color: black">HEIGHT</th>
+			<th style="color: black">GENDER:</th>
+			<th style="color: black">DATE & TIME</th>
+
+		</tr>
+
+			{% for j in data['footprints'] %}
+		<tr>
+			<td style="color: black">{{data['footprints'][0]['left_len']}}</td>
+			<td style="color: black">{{data['footprints'][0]['left_width']}}</td>
+			<td style="color: black">{{data['footprints'][0]['right_len']}}</td>
+			<td style="color: black">{{data['footprints'][0]['right_width']}}</td>
+			<td style="color: black">{{data['footprints'][0]['add_info']}}></td>
+			<td style="color: black">{{data['footprints'][0]['height']}}</td>
+			<td style="color: black">{{data['footprints'][0]['gender']}}></td>
+			<td style="color: black">{{data['footprints'][0]['date_time']}}</td>
+			
+		</tr>
+		{% endfor %}
+</table>
+
+		<h2>HAIR DETAILS</h2>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			
+			<th style="color: black">SAMPLE OF HAIR OR FIBER?</th>
+			<th style="color: black">DIAMETER OF THE MEDULLA:</th>
+			<th style="color: black">DIAMETER OF THE HAIR:</th>
+			<th style="color: black">WHICH PART OF THE BODY:</th>
+			<th style="color: black">WHETHER BARR BODIES IS PRESENT:</th>
+			<th style="color: black">SAMPLE HAIR IS :</th>
+			<th style="color: black">GENDER:</th>
+			
+
+		</tr>
+
+			{% for j in data['hair_tests'] %}
+		<tr>
+			<td style="color: black">{{data['hair_tests'][0]['hair_fiber']}}</td>
+			<td style="color: black">{{data['hair_tests'][0]['dia_medu']}}</td>
+			<td style="color: black">{{data['hair_tests'][0]['dia_hair']}}</td>
+			<td style="color: black">{{data['hair_tests'][0]['which_part']}}</td>
+			<td style="color: black">{{data['hair_tests'][0]['pre_barr_bodies']}}></td>
+			<td style="color: black">{{data['hair_tests'][0]['animal_or_human']}}</td>
+			<td style="color: black">{{data['hair_tests'][0]['gender']}}></td>
+			
+			
+		</tr>
+		{% endfor %}
+	</table>
+
+		<h2>HAIR DETAILS</h2>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			
+			<th style="color: black">IS ROOT DIVERGEN?</th>
+			<th style="color: black">APPEARANCE OF THE TOOTH:</th>
+			<th style="color: black">COLOR OF THE TOOTH:</th>
+			<th style="color: black">APPEARANCE OF THE EDGE OF THE TOOTH:</th>
+			<th style="color: black">TEETH IDENTIFIED IS :</th>
+			<th style="color: black"> TEMPORARY TYPE OF TEETH :</th>
+			<th style="color: black">PERMANAENT TYPE OF TEETH :</th>
+			<th style="color: black">DATE AND TIME:</th>
+			
+
+		</tr>
+
+			{% for j in data['teeths'] %}
+		<tr>
+			<td style="color: black">{{data['teeths'][0]['root_diver']}}</td>
+			<td style="color: black">{{data['teeths'][0]['appear']}}</td>
+			<td style="color: black">{{data['teeths'][0]['color']}}</td>
+			<td style="color: black">{{data['teeths'][0]['edge']}}</td>
+			<td style="color: black">{{data['teeths'][0]['teeth_ident']}}></td>
+			<td style="color: black">{{data['teeths'][0]['temp_typ_teeth']}}</td>
+			<td style="color: black">{{data['teeths'][0]['per_typ_teeth']}}></td>
+			<td style="color: black">{{data['teeths'][0]['date_time']}}></td>
+			
+			
+
+
+			
+			
+		</tr>
+		{% endfor %}
+	
+
+
+	</table>
+
+<h1 style="color: black">POST-MOTERM</h1>
+	
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+			<tr>
+		<th style="color:black">BODY TEMPERATURE</th>
+
+		<th style="color:black">CHANGES IN THE EYES</th>
+
+		<th style="color:black">LIVOR MORTIS</th>
+
+		<th style="color:black">DEGRADITION</th>
+		<th style="color:black">TIME SINCE DEATH IN HOURS</th>
+
+		<th style="color:black">DEGRADITION TIME </th>
+				
+			</tr>
+			<tr>
+				{% for j in data['post_mortems'] %}
+				<td style="color: black">{{data['post_mortems'][0]['body_temp']}}</td>
+				<td style="color: black">{{data['post_mortems'][0]['changes_in_eye']}}</td>
+				<td style="color: black">{{data['post_mortems'][0]['livor_mortis']}}</td>
+				<td style="color: black">{{data['post_mortems'][0]['degradation']}}</td>
+				<td style="color: black">{{data['post_mortems'][0]['time_snc_death_in_hrs']}}</td>
+				<td style="color: black">{{data['post_mortems'][0]['degradation_time']}}</td>
+					
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+
+	</form>
+</center>
+	</table>
+	</form>
+</center>
+</div>
+	</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html"%}

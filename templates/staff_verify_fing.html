@@ -1,0 +1,70 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">DACTYLOGRAPHY</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+
+				<th style="color:white">FINGER PATTERNS </th>
+
+				<th style="color:white">REFERENCE POINT OF CAMPARISON</th>
+
+				<th style="color:white">METHOD OF COLLECTION</th>
+
+				<th style="color:white">ADDITION INFO IF ANY</th>
+
+				<th style="color:white">UPLOAD IMAGE</th>
+
+				
+			</tr>
+
+
+
+
+
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white">{{j['pattern']}}</td>
+				<td style="color: white">{{j['ref_point']}}</td>
+				<td style="color: white">{{j['met_of_coll']}}</td>
+				<td style="color: white">{{j['add_info']}}</td>
+				<td style="color: white"><img src="/{{j['image']}}" width="100" height="100"></td>
+				{%if j['f_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}
+
+			</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

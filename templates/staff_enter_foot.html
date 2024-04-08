@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Forenic</title>
+<!-- for-meta-tags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-meta-tags-->
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen" Department="" />
+<link href="/static/css/services.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/ziehharmonika.css" rel="stylesheet" type="text/css">
+<link href="/static/css/JiSlider.css" rel="stylesheet"> 
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="/static/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+</head>
+	
+<body onload="hideValue()">
+<div class="main" id="home">
+<!-- banner -->
+					
+
+		<div class="header-bottom">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index.html"><span>F</span>orensic <!-- <i class="fa fa-plus" aria-hidden="true"></i> <p>Quality Care 4U</p> --></a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--sebastian">
+					<ul id="m_nav_list" class="m_nav menu__list">
+
+
+						<li class="m_nav_item menu__item menu__item--current" id="m_nav_item_1"> <a href="stf_home" class="menu__link"> Home </a></li>
+
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="staff_profile_updation" class="menu__link">UPDATE PROFILE </a> </li>
+
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="stf_home?action=add" onclick="return confirm('Are you sure you want to Update?');" class="menu__link">Mark Attendance </a> </li>
+
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="staff_view_case" class="menu__link">CASES </a> </li>
+
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="stff_view_allocated_cases" class="menu__link">Allocated Cases </a> </li>			
+					
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="/login" class="menu__link"> LOGOUT </a> </li>
+					</ul>
+				</nav>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+	 </div>
+</div>		
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">PODOGRAPHY </h1>
+	<form method="post" >
+		<table class="table" style="width: 500px">
+			<tr>
+				<th style="color:white">LENGTH OF THE RIGHT FOOT </th>
+				<td><input onchange="findPerson()" id="rf" type="text" class="form-control" name="len_rgt_foot"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">LENGTH OF THE LEFT FOOT</th>
+				<td><input onchange="findPerson()" id="lf" type="text" class="form-control" name="len_lft_foot"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">WIDTH OF THE RIGHT FOOT</th>
+				<td><input onchange="findPerson()" id="rw" type="text" name="wdt_rgt_foot"  class="form-control"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">WIDTH OF THE LEFT FOOT</th>
+				<td><input onchange="findPerson()" id="lw" type="text" name="wdt_lft_foot" class="form-control"></td>
+			</tr>
+				
+				
+
+			<tr>
+				<th style="color:white">ADDITIONAL INFO</th>
+				<td><input type="text" name="add_info"  class="form-control"></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-success" type="submit" name="submit" value="SUBMIT"></td>
+			</tr>
+		</table>
+		<table class="table">
+			<tr id="row1">
+					<!-- <th  >Male</th>
+					<td style="color: red;font-weight: 600" >Height</td> -->
+					<th style="color: white;font-size: 18px"> expected Gender</th>
+					<td><input style="color: red;font-weight: 600" readonly="" class="form-control" type="text" name="gender" id="gen"></td>
+						
+				</tr><br>
+				<tr id="row2">
+					<th style="color: white;font-size: 18px" > expectedHeight </th>
+					<td><input style="color: red;font-weight: 600" type="text" name="height" id="hei" readonly="" class="form-control"></td>
+				</tr>
+		</table>
+
+		<script type="text/javascript">
+			function findPerson() {
+				let lengthR = document.getElementById('rf').value
+				let lengthL = document.getElementById('lf').value
+				let widthR = document.getElementById('rw').value
+				let widthL = document.getElementById('lw').value
+
+				// let genEl = document.getElementById('gen')
+				// let heiEl = document.getElementById('hei').value
+
+				let genEl = document.getElementById('row1')
+				let heiEl = document.getElementById('row2')
+				
+				
+
+				let heightPerson = lengthR*7 || lengthL*7 ;
+				
+				
+				heiEl.style.opacity=1
+
+				document.getElementById('hei').value = heightPerson
+
+				if(lengthR && widthR){
+
+
+				let ratio = (widthR/lengthR) || (widthL/lengthL)
+				genEl.style.opacity=1
+				if (ratio > 0.377){
+					
+					document.getElementById('gen').value = "Male"
+
+				}else{
+					
+					document.getElementById('gen').value = "Female"
+				}
+					}
+
+					if(lengthL && widthL){
+
+
+				let ratio = (widthR/lengthR) || (widthL/lengthL)
+				genEl.style.opacity=1
+				if (ratio > 0.377){
+					
+					document.getElementById('gen').value = "Male"
+
+				}else{
+					
+					document.getElementById('gen').value = "Female"
+				}
+					}
+
+
+
+				
+
+				console.log(heightPerson)
+			}
+
+			function hideValue() {
+				let genEl = document.getElementById('row1')
+				let heiEl = document.getElementById('row2')
+				genEl.style.opacity=0
+				heiEl.style.opacity=0
+			}
+			
+		</script>
+		
+	</form>
+</center>
+
+</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+{% include "footer.html" %}

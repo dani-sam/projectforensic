@@ -1,0 +1,43 @@
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+
+<center>
+	<form method="post">
+		<table class="table" style="width: 400px">
+			<tr>
+				<td><input type="submit" name="verify_evi" class="btn btn-success" value="EVIDENCE"></td>
+			</tr>
+
+			<tr>
+				{%for row in data['video_audios']%}
+				{%if row['va_status']=="pending"%}
+				<td><input type="submit" name="verify_digievi" class="btn btn-primary" value="DIGITAL EVIDENCES"></td>
+				{%else%}
+				<td><input class="btn btn-primary" type=""  value="DIGITAL EVIDENCES " readonly=""></td>
+				{%endif%}
+				{%endfor%}			</tr>
+		</table>
+	</form>
+</center>
+	</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

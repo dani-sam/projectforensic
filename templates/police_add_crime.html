@@ -1,0 +1,123 @@
+{% include "police_header.html" %}
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+
+<center>
+	<form method="post">
+		<h1 style="color: white">ADD CRIMES</h1>
+		<table class="table" style="width: 700px;">
+			<tr>
+				<th style="color:white">STATION NAME</th>
+				<td><input type="text" value="{{data['sn']}}" readonly="" required="" class="form-control" name="stname"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">FIRST NAME</th>
+				<td><input type="text" required="" class="form-control" name="fname"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">LAST NAME</th>
+				<td><input type="text" required="" class="form-control" name="lname"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">DESIGNATION</th>
+				<td>
+					<select name="desi" required="" class="form-control">
+						<option>SI</option>
+						<option>CIRCLE</option>
+						<option>SP</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color:white">CASE NUMBER</th>
+				<td><input type="text" required="" class="form-control" name="case_num"></td>
+			</tr>
+			<tr>
+				<th style="color:white">TYPE OF CRIME</th>
+				<td>
+					<select name="crime" required="" class="form-control">
+						<option>MURDER</option>
+						<option>THEFT</option>
+						<option>KIDNAP</option>
+						<option>RAPE</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th><a onclick="myFunction();" class="btn btn-success"><b style="cursor: pointer;">View Map</b></a></th>
+
+			</tr>
+			
+			<tr>
+
+				<th>LATITUDE</th>
+				<td><input type="text" name="latit" required="" class="form-control"  id="lat"></td>
+				
+			</tr>
+
+			<tr>
+				<th>LONGITUDE</th>
+				<td><input type="text" name="longi" required="" class="form-control" id="lon"></td>
+			</tr>
+			
+
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-info" type="submit" name="add_crime" value="REGISTER CRIME"></td>
+			</tr>
+			<tr>
+				<th>
+					<div id="dvMap" style="width: 450px; height: 400px"></div>
+				</th>
+			</tr>
+		</table>
+	</form>
+</center>
+
+
+
+</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+    <script type="text/javascript">
+        // window.onload = function () {
+          function myFunction(){
+            var mapOptions = {
+                center: new google.maps.LatLng(9.9763482, 76.286272),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (e) {
+                alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+              document.getElementById('lat').value = e.latLng.lat();
+                document.getElementById('lon').value = e.latLng.lng();
+           
+
+            });
+        }
+    </script>
+
+
+
+{% include "footer.html" %}

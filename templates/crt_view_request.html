@@ -1,0 +1,52 @@
+{% include "court_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<form method="post">
+		<h1 style="color: white">VIEW EVIDENCES</h1>
+	<table border="2" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			<th style="color: black">SL No</th>
+			<th style="color: black">CASE No.</th>
+			<th style="color: black">STATUS</th>
+			<th style="color: black">DATE TIME</th>
+			<th style="color: black">LOCATION</th>
+		</tr>
+
+			{% for j in data['view'] %}
+		<tr>
+			<td style="color: black">{{loop.index}}</td>
+			<td style="color: black">{{j['case_num']}}</td>
+			<td style="color: black">{{j['status']}}</td>
+			<td style="color: black">{{j['date_time']}}</td>
+			<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{ j['latitude'] }},{{ j['longitude'] }}">Click Me</a></td>
+			{% if j['status']=="Accepted" %}
+			<td><a href="crt_view_evidences?case_num={{j['case_num']}}" class="btn btn-success">Evidence Report</a></td>
+			<td><a href="crt_view_digital_evidence?case_num={{j['case_num']}}" class="btn btn-success">Digital Evidence</a></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+	</form>
+</center>
+	</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html"%}

@@ -1,0 +1,28 @@
+{% include "admin_header.html" %}
+<center>
+<h1>ASSIGN STAFF</h1>
+<form method="post">
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Staff</th> 
+			<td>
+				<select name="stf" required="" class="form-control">
+					{% for row in data['staff'] %}
+					<option value="{{row['fs_id']}}">{{row['username']}}</option>
+					{% endfor %}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input class="btn btn-success" type="submit" name="assign" value="ASSIGN"></td>
+		</tr>
+	</table>
+	
+</form>
+
+ </center>
+
+{% include "footer.html" %}
+
+
+

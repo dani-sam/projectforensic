@@ -1,0 +1,73 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">TRICHOLOGY</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+
+				<th style="color:white">PRESENCE OF CUTILES / MEDULA /CORTEX </th>
+
+				<th style="color:white">DAIMETER OF MEDULLA </th>
+
+				<th style="color:white">DIAMETER OF THE HAIR</th>
+
+				<th style="color:white">WHICH PART OF THE BODY</th>
+
+				<th style="color:white">PRESENCE OF BARR BODIES</th>
+				<th style="color:white">ANIMAL OR HUMAN </th>
+
+				<th style="color:white">GENDER </th>
+
+
+				
+			</tr>
+
+
+
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white">{{j['hair_fiber']}}</td>
+				<td style="color: white">{{j['dia_medu']}}</td>
+				<td style="color: white">{{j['dia_hair']}}</td>
+				<td style="color: white">{{j['which_part']}}</td>
+				<td style="color: white">{{j['pre_barr_bodies']}}</td>
+				<td style="color: white">{{j['animal_or_human']}}</td>
+				<td style="color: white">{{j['gender']}}</td>
+				{%if j['ht_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}	
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

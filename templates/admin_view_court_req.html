@@ -1,0 +1,68 @@
+{% include "admin_header.html" %}
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+
+<center>
+	<h1 style="color: white"> VIEW COURT REQUEST </h1>
+	<form method="post">
+		<table border="4" class="table" style="width: 800px;color: black;background: rgba(255,255,255,0.5);">
+		<tr>
+			<th style="color: black">SL No.</th>
+			<th style="color: black">CASE NUMBER</th>
+			<th style="color: black">TYPE OF CASE</th>
+			<th style="color: black">COURT NAME</th>
+			<th style="color: black">TYPE OF COURT</th>
+			<th style="color: black">STATE OF THE COURT</th>
+			<th style="color: black">DISTRICT OF THE COURT</th>
+			<th style="color: black">PHONE NUMBER</th>
+			<th style="color: black">ALTERNATIVE PHONE NUMBER</th>
+			<th style="color: black">STATUS</th>
+		</tr>
+		{% for j in data['evidence'] %}
+		
+		<tr>
+			<td style="color: black">{{loop.index}}</td>
+			<td style="color: black">{{j['case_num']}}</td>
+			<td style="color: black">{{j['type_of_crime']}}</td>
+			<td style="color: black">{{j['c_name']}}</td>
+			<td style="color: black">{{j['ty_crt']}}</td>
+			<td style="color: black">{{j['state']}}</td>
+			<td style="color: black">{{j['district']}}</td>
+			<td style="color: black">{{j['phone1']}}</td>
+			<td style="color: black">{{j['phone2']}}</td>
+			{% if j['st']=="pending" %}
+			<td><a href="?action=accept&id={{j['req_ev_no']}}" class="btn btn-success">Accept</a></td>
+			{% else %}
+			<td style="color: black">{{j['st']}}</td>
+			{% endif %}
+		</tr>
+	
+{% endfor %}
+	</table>
+	</form>
+</center>
+
+	</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+{% include "footer.html" %}
+
+
+
+		
+			

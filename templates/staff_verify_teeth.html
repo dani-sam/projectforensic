@@ -1,0 +1,74 @@
+
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">ODONTOLOGY</h1>
+	
+		<table border="2" class="table" style="width: 800px;color: white;background: rgba(255,255,255,0.5);">
+			<tr>
+				<th style="color: white">SL No.</th>
+
+				<th style="color:white">IS ROOT DIVERGENT </th>
+
+				<th style="color:white">APPERANCE </th>
+
+				<th style="color:white">COLOR</th>
+
+				<th style="color:white">EDGE</th>
+
+				<th style="color:white">TEETH IDENT</th>
+
+				<th style="color:white">TEMPORARY TYPE OF TEETH</th>
+
+				<th style="color:white">PERMANENT TYPE OF TEETH</th>
+
+
+
+				
+			</tr>
+
+
+			<tr>
+				{% for j in data['x'] %}
+				<td style="color: white">{{loop.index}}</td>
+				<td style="color: white">{{j['root_diver']}}</td>
+				<td style="color: white">{{j['appear']}}</td>
+				<td style="color: white">{{j['color']}}</td>
+				<td style="color: white">{{j['edge']}}</td>
+				<td style="color: white">{{j['teeth_ident']}}</td>
+				<td style="color: white">{{j['temp_typ_teeth']}}</td>
+				<td style="color: white">{{j['per_typ_teeth']}}</td>
+				{%if j['t_status']=="pending"%}
+				<td><a class="btn btn-success" href="?action=verify&cid={{j['crime_num']}}">Verify </a></td>
+				{% endif %}		
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+	</form>
+</center>
+
+
+								</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}

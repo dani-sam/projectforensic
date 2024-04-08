@@ -1,0 +1,164 @@
+{% include "staff_header.html" %}
+
+
+<!-- banner -->
+	<div class="banner-silder">
+		<div>
+			<ul>
+				<li>
+					<div class="w3layouts-banner-top">
+
+							<div class="container">
+									<div class="agileits-banner-info">
+<center>
+	<h1 style="color: white">PROFILE</h1>
+	<form method="post" enctype="multipart/form-data">
+		<table class="table" style="width: 700px">
+			<tr>
+				<td><a href="/{{data['h'][0]['photo']}}"><img src="/{{data['h'][0]['photo']}}" height="100" width="100"></a>
+
+				</td>
+			</tr>
+			<tr>
+				<th style="color:white">FINAME</th>
+				<td style="color: black"><input type="text" readonly="" value="{{data['h'][0]['fname']}}" class="form-control" name=""></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">LNAME</th>
+				<td style="color: black"><input type="text" class="form-control" readonly="" value="{{data['h'][0]['lname']}}" name=""></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">GENDER</th>
+				<td style="color: black"><input type="text" class="form-control" name="r1" value="{{data['h'][0]['gender']}}"></td>
+					
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color:white">DATE OF BIRTH</th>
+				<td style="color: black"><input class="form-control" type="date" readonly="" name="DOB" value="{{data['h'][0]['dob']}}"></td>
+			</tr>
+
+			
+			<tr>
+				<th style="color:white">STATE</th>
+				<td>
+					<select name="state"  required="" class="form-control">
+						<option style="color: black">{{data['h'][0]['state']}}</option>
+						<option>KERALA</option>
+						<option>TAMIL NADU</option>
+						<option>KARNATAKA</option>
+						<option>ANDHRA PRADESH</option>
+						<option>GOA</option>
+						<option>TELANGANA</option>
+						<option>MAHARASHTRA</option>
+						<option>GUJARAT</option>
+						<option>MADHYA PRADESH</option>
+						<option>CHHATTUSGARH</option>	
+						<option>ODISHA</option>
+						<option>WEST BENGAL</option>
+						<option>JHARKHAND</option>
+						<option>WEST BENGAL</option>
+						<option>BIHAR</option>
+						<option>PUNJAB</option>					
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color:white">DISTRICT</th>
+				<td>
+					<select name="district" class="form-control" required=""
+					>
+						<option>{{data['h'][0]['district']}}</option>
+						<option>THIRUVANANTHAPURAM</option>
+						<option>KOLLAM</option>
+						<option>PATHANAMTHITTA</option>
+						<option>ALAPPUZHA</option>
+						<option>KOTTAYAM</option>
+						<option>IDUKKI</option>
+						<option>ERNAKULAM</option>
+						<option>THRISSUR</option>
+						<option>PALAKKAD</option>
+						<option>MALAPPURAM</option>
+						<option>KOZHIKODE</option>
+						<option>WAYANAD</option>
+						<option>KANNUR</option>
+						<option>KASARGOD</option>						
+					</select>
+				</td>
+			 </tr>
+
+
+			 <tr>
+				<th style="color:white">CITY</th>
+				<td style="color: black"><input class="form-control" type="text" name="city" value="{{data['h'][0]['city']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">ADDRESS</th>
+				<td style="color: black">
+					
+				<textarea name="addr" required="" class="form-control">
+				   {{data['h'][0]['address']}}
+			</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="color:white">PINCODE</th>
+				<td style="color: black"><input type="text" class="form-control" name="pin" value="{{data['h'][0]['pincode']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">PHONE NUMBER</th>
+				<td style="color: black"><input class="form-control" type="text" name="num" readonly="" value="{{data['h'][0]['phone']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">ALTERNATIVE PHONE NUMBER</th>
+				<td style="color: black"><input class="form-control" type="text" name="num1" value="{{data['h'][0]['alt_phone']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">EMAIL</th>
+				<td style="color: black"><input class="form-control" type="text" name="email" readonly="" value="{{data['h'][0]['email']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">DATE OF JOINING</th>
+				<td style="color: black"><input class="form-control" type="date" name="doj" readonly="" value="{{data['h'][0]['doj']}}"></td>
+			</tr>
+
+			<tr>
+				<th style="color:white">PASSWORD</th>
+				<td style="color: black"><input class="form-control" type="text" name="pass"  value="{{data['h'][0]['password']}}"></td>
+			</tr>
+			<tr>
+				<th style="color:white">UPDATE IMAGE</th>
+				<td style="color: black"><input class="form-control" type="file" name="pic"></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-success" type="submit" name="register" value="UPDATE"></td>
+			</tr>
+
+		</table>
+	</form>
+</center>
+
+
+</div>	
+							</div>
+						</div>
+				</li>
+				
+			</ul>
+		</div>
+      </div>
+
+<!-- //banner -->
+
+{% include "footer.html" %}
